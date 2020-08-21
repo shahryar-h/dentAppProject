@@ -1,0 +1,85 @@
+<% provide(:title, "Admin Panel") %>
+
+<div class="row">
+
+
+	<div class="row col-lg-8 col-lg-offset-2 info-container2"> 
+
+		<div class="col-lg-3">
+			<%= form_tag(admins_index_path, :method => "get") do %>
+				<span>from</span>
+			  		<%= date_field_tag :start_time, params[:time] ,class:"form-search"%>
+			  	<span id="to">to</span>
+			  		<%= date_field_tag :end_time, params[:time] ,class:"form-search"%>
+				</br>
+			  		<%= submit_tag "find patients", class:"btn btn-primary reg-form-button" %>
+			<% end %>
+
+		</div>
+
+		<div class="col-lg-9 ">
+			<div class="row col-lg-10 col-lg-offset-1 ">
+
+				<div class="col-lg-4 info-style"><p>Number Of Patients </p><%=@patient_count_record%></div>
+				<div class="col-lg-4 info-style"><p>Number Of Treatments </p><%=@treatment_count_record%></div>
+				<div class="col-lg-4 info-style"><p>Paid</p><%=@treatment_paid_record%></div>
+
+
+			</div>
+
+			<div class="row col-lg-10 col-lg-offset-1">
+				<div class="col-lg-4 info-style"><p>Clinic</p><%=@treatment_clinic_record%></div>
+				<div class="col-lg-4 info-style"><p>Associate</p><%=@treatment_associate_record %></div>
+
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="row col-lg-8 col-lg-offset-2">
+
+		<div class="col-lg-6">
+
+			<div class="table-responsive">          
+	  			<table class="table">
+	    			<tbody>
+	    				<% @patient_date_record.each do |patient| %>
+	      				<tr>
+	        				<td>Name:</td>
+	        				<td class="admin-table"><%= patient.first_name %></td>
+	        				<td class="admin-table"><%= patient.last_name %></td>
+	        				<td><%= link_to "edit information", edit_patient_path(patient.id), :class => "btn btn-primary reg-form-button" %></td>
+	        			</tr>
+	        			<% end %>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+		<div class="col-lg-6">
+
+			<div class="table-responsive">          
+	  			<table class="table">
+	    			<tbody>
+	    				<% @treatment_date_record.each do |treatment| %>
+	      				<tr>
+	        				<td>Treatment Date:</td>
+	        				<td class="td2"><%= treatment.teartment_date %></td>
+	        				<td><%= link_to "edit information", edit_treatment_path(treatment.id), :class => "btn btn-primary reg-form-button" %></td>
+	        			</tr>
+	        			<% end %>
+					</tbody>
+				</table>
+			</div>
+
+
+		</div>		
+
+	</div>
+
+
+
+

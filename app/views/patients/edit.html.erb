@@ -1,0 +1,79 @@
+<% provide(:title, "Edit patient") %>
+
+
+
+<h1 class="user-edit-h1">patient profile Update</h1>
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 patient_info" >
+
+    <%= image_tag @patient.patient_avatar.url(:large) %>
+  
+  </div>
+
+  </div>
+
+
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 edit-patient-form ">
+
+
+    <%= bootstrap_form_for(@patient) do |f| %>
+      
+
+      <%= f.text_field :first_name, hide_label: true, placeholder: "First Name",icon: "user"%>
+      
+      <%= f.text_field :last_name, hide_label: true, placeholder: "Last Name",icon: "user"%>
+
+      <%= f.text_field :middle_name, hide_label: true, placeholder: "Middle Name",icon: "user"%>
+
+      <%= f.text_field :title, hide_label: true, placeholder: "title",icon: "user"%>
+      
+      <%= f.text_field :guardian, hide_label: true, placeholder: "guardian",icon: "user"%>
+
+      <%= f.text_field :physician, hide_label: true, placeholder: "physician",icon: "user"%>
+
+      <%= f.number_field :patient_number, hide_label: true, placeholder: "Patient Number",icon:"phone"%>
+
+      <%= f.text_field :con_number, hide_label: true, placeholder: "Contact Number",icon:"phone"%>
+
+      <%= f.email_field :email, hide_label: true, placeholder: "Patient's Email", icon:"envelope"%>
+
+      <%= f.date_field :consult_date,hide_label: true, placeholder: "Consultation Date",icon:"calendar"%>
+
+      <%= f.date_field :birtday, hide_label: true, placeholder: "Birtday",icon:"calendar"%>
+
+      <%= f.text_area :address, hide_label: true, placeholder: "Address",icon:"home"%>
+
+      <%= f.text_area :diagnosis, hide_label: true, placeholder: "Diagnosis",icon:"pencil"%>
+
+      <%= f.file_field :patient_avatar%>
+
+      <%= f.file_field :patient_od%>
+
+      <% if current_user.admin? %>
+     <%= link_to "delete patient", @patient, method: :delete,:class => "btn btn-primary reg-form-button delete-button",
+                                  data: { confirm: "Are You sure you want to delete this user ?" } %>
+      <% end %>
+      <%= f.submit "Update patient's information", class: "btn btn-primary reg-form-button" %>
+    <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

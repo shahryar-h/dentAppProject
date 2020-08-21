@@ -1,0 +1,47 @@
+<% provide(:title, 'All Patients') %>
+<div class="row">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 " >
+		<div class="box">
+			<div class="container-1">
+			<span class="icon"><i class="glyphicon glyphicon-search"></i></span>
+		<%= form_tag(patients_path, :method => "get") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "search patients here" , class: "search-box" %>
+  <% submit_tag "find patients", :name => nil, class: " search-btn" %>
+<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+				<div class="row">
+					<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+					<% @patients.each do |patient| %>
+						<div class="col-xs-12 col-sm-6 col-md-4" >	
+						
+						
+							      	<div class="patient_info"><%= link_to image_tag(patient.patient_avatar.url(:thumb)), patient %></div>
+  
+							      	<div class="patient_info"><%= link_to patient.first_name, patient, class:'patient-link' %>
+
+							      	<%= link_to patient.last_name, patient, class:'patient-link' %></div>
+								
+						
+						</div>
+					<% end %>	
+					</div>
+				</div>
+
+
+
+
+
+				<div class="row">
+
+					<div class="pag col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+						<%= will_paginate @users,:page_links => false %>
+					</div>	
+
+				</div>
+				
+

@@ -1,0 +1,6 @@
+---
+:Patient:
+  :patient_avatar:
+  - :large
+  - :medium
+  - :thumb

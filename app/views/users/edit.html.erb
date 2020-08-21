@@ -1,0 +1,53 @@
+<% provide(:title, "Edit user") %>
+
+
+
+<h1 class="user-edit-h1">profile Update</h1>
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 ">
+    <div class="row">
+    <div class="gravatar_edit col-lg-3">
+      <figure>
+  <%= gravatar_for @user, options = { size: 150, class:"user_edit-gravatar" } %>
+  <figcaption class="edit-user-figcaption"><a href="http://gravatar.com/emails" target="_blank">change picture</a></figcaption>
+</figure>
+    </div>
+    <div class="form col-lg-9">
+    <%= bootstrap_form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <% if current_user.admin? %>
+
+      <%= f.text_field :name, hide_label: true, placeholder: "First Name",icon: "user"%>
+      
+      <%= f.text_field :name, hide_label: true, placeholder: "Last Name",icon: "user"%>
+
+      <%= f.number_field :personel_number, hide_label: true, placeholder: "Personel Number",icon:"home"%>
+
+      <%= f.email_field :email, hide_label: true, placeholder: "New Email", icon:"envelope"%>
+      <% end %>
+
+      <%= f.password_field :password,hide_label: true, placeholder: "New Password",icon:"lock"%>
+
+      <%= f.password_field :password_confirmation, hide_label: true, placeholder: "Confirm New Password",icon:"lock"%>
+      <% if current_user.admin? %>
+            <%= f.form_group :admin, label: { text: "Admin Or Not?" } do %>
+      <%= f.check_box :admin do %>
+      Please Cheack this Box if You want this User to be an Admin.
+      <% end %>
+      <% end %>
+      <% end %>
+
+      <% if current_user.admin? %>
+     <%= link_to "delete User", @user, method: :delete,:class => "btn btn-primary reg-form-button delete-button",
+                                  data: { confirm: "Are You sure you want to delete this user ?" } %>
+      <% end %>
+      <%= f.submit "Update your informationa", class: "btn btn-primary reg-form-button" %>
+    <% end %>
+    </div>
+
+    </div>
+  </div>
+</div>
+

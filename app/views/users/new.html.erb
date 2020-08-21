@@ -1,24 +1,34 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
 
+  <div class="row">
+      <h1 class="signup">Create New User</h1>
+  </div>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
+  <div class="col-md-4 col-md-offset-4">
+    <div class="center-reg-form">
+    <%= bootstrap_form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.text_field :name, hide_label: true, placeholder: "First Name",icon: "user"%>
+      
+      <%= f.text_field :name, hide_label: true, placeholder: "Last Name",icon: "user"%>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.number_field :personel_number, hide_label: true, placeholder: "Personel Number",icon:"home"%>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.email_field :email, hide_label: true, placeholder: "Enter User's Email", icon:"envelope"%>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.password_field :password,hide_label: true, placeholder: "Choose a Password",icon:"lock"%>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.password_field :password_confirmation, hide_label: true, placeholder: "Confirm Password",icon:"lock"%>
+
+      <%= f.form_group :admin, label: { text: "Admin Or Not?" } do %>
+      <%= f.check_box :admin do %>
+      Please Cheack this Box if You want this User to be an Admin.
+      <% end %>
+      <% end %>
+
+      <%= f.submit "Create User", class: "btn btn-primary reg-form-button" %>
     <% end %>
+    </div>
   </div>
 </div>

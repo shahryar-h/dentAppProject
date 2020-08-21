@@ -13,3 +13,510 @@
  *= require_tree .
  *= require_self
  */
+ /*
+ *= require rails_bootstrap_forms
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+                                               /*  ---------- header ----------*/
+header {
+
+	background: #333;
+	color: #fff;
+	height: 80px;
+	margin-bottom: 20px;
+
+}
+
+                                               /*  ---------- body ----------*/
+
+ body {
+
+
+ 	padding-top: 50px;
+ 	font-family: 'Arial', sans-serif;
+ 	font-size: 14px;
+ 	color: #666;
+ 	line-height: 1.5em;
+
+ }
+
+@media (max-width: 768px) {
+	.col-xs-12{
+
+		margin: 0 auto;
+	}
+
+}
+
+
+                                               /*  ---------- Users page ----------*/
+
+@media (min-width: 992px) and (max-width: 1199px)  { 
+
+    .col-md-4 {
+    width: 49.333333%;
+    padding-left: 60px;
+  }
+    .col-md-offset-4 {
+    margin-left: 24.333333%;
+}
+
+
+ }
+
+
+ul.users li{
+	list-style: none;
+}
+
+
+
+.user-link {
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+    padding: 14px 0px;
+    background-color: #333333;
+    border-radius: 5px;	
+}
+
+
+
+.user-link:hover {
+
+	text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 1px;
+
+}
+
+
+
+/* Bounce To Left */
+.hvr-bounce-to-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 1.5s;
+  transition-duration: 1.5s;
+  width:230px;
+}
+.hvr-bounce-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FF6517;
+  border-radius: 5px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 1.5s;
+  ransition-duration: 1.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-left:hover, .hvr-bounce-to-left:focus, .hvr-bounce-to-left:active {
+  color: white;
+}
+.hvr-bounce-to-left:hover:before, .hvr-bounce-to-left:focus:before, .hvr-bounce-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);}
+
+.pagination{
+
+	position: relative;
+    left: 18%;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span{
+
+    background-color:  #333333;
+    color: white;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span{
+
+    background-color:  #333333;
+    color: white;
+}
+
+.user-index{
+padding-top: 120px;
+}
+
+                                               /*  ---------- Signup ----------*/
+
+div h1.signup{
+
+  text-align: center;
+
+}
+
+.center-reg-form {
+
+    margin: auto;
+    border: 2px solid #666666;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+
+.reg-form-button{
+
+    margin: auto;
+    width: 100%;
+    color: #666;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-color: #666666;
+    margin-top: 10px
+
+
+
+}
+
+.reg-form-button:hover {
+
+
+  background-color: #333;
+  color: white;
+}
+.reg-form-button:active{
+    opacity: .75;
+    transform: scale(.97);
+    transition: all 60ms ease;
+
+}
+
+                                               /*  ---------- Login ----------*/
+
+
+.center-login-form {
+
+    margin: auto;
+    border: 2px solid #666666;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 30%;
+}
+
+
+@media (min-width: 768px) and (max-width: 992px)  { 
+
+    .center-login-form {
+
+      margin-top: 15%;
+
+
+    }
+
+
+ }
+
+                                               /*  ---------- User-info(Show) ----------*/
+
+.user_info-gravatar{
+
+
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+
+}
+.user-info-h1 {
+
+  text-align: center;
+}
+
+.td2{
+
+  text-align: right;
+
+}
+.delete-button{
+
+  background-color: #A90329;
+  margin-bottom: 5px;
+  color: white;
+
+}
+.delete-button:hover {
+
+  background-color: #d20202; 
+  
+}
+
+
+                                               /*  ---------- User-edit(edit) ----------*/
+
+
+.user_edit-gravatar{
+
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+
+}
+
+.edit-user-figcaption  {
+
+    text-align: center;
+    margin-bottom: 20px;
+
+
+}
+
+
+.edit-user-figcaption > a {
+
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  background: #333333;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+
+
+}
+
+.edit-user-figcaption > a:hover {
+
+  background: #FAFAFA;
+  text-decoration: none;
+  color: #333333;
+  border: 1px solid #333333;
+}
+
+.user-edit-h1 {
+
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+
+
+                                               /*  ---------- home page ----------*/
+
+
+
+
+.home-tile {
+  background-color: #333; -webkit-box-shadow: 0 0 18px #333;
+  display: flex;
+  height: 100px;
+  margin: 10px;
+  align-items: center; 
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight: 700;
+  
+}
+.home-tile:hover{
+  text-decoration: none;
+  background-color: #FF530D; -webkit-box-shadow: 0 0 18px #FF530D;
+  color: #FFFFFF;
+}
+
+.home-box{
+
+  margin-top: 100px
+}
+
+                                               /*  ---------- patient-show page ----------*/
+
+
+div.patient_info img {
+
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+  margin-top: 50px;
+  box-shadow: 0px 0px 14px 1px #333;
+
+}
+div.patient_info img:hover {
+
+box-shadow: 0px 0px 14px 1px #FF6517;
+
+}
+
+
+
+div.patient_info a {
+
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.patient-treatments-link>a {
+
+    color: black;
+    text-decoration: none;
+    padding: 1px 20px 0px 0px;
+}
+.patient-treatments-link>a:hover {
+    font-weight: 600;
+    color: #428bca;
+    text-decoration: none;
+    padding: 1px 20px 0px 0px;
+}
+
+
+
+                                               /*  ---------- patient-index page ----------*/
+
+
+
+
+.patient-link {
+    text-align: center;
+    text-decoration: none;
+    font-size: large;
+    color: #333;
+    letter-spacing: 1px;
+    padding: 14px 0px;
+    
+}
+
+
+
+.patient-link:hover {
+
+    text-align: center;
+    text-decoration: none;
+    font-size: large;
+    color: #FF6517;
+    letter-spacing: 1px;
+
+}
+
+
+
+.box{
+  margin: 30px auto;
+  width: 300px;
+  height: 50px;
+}
+
+.container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-1 input#search{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #d9edf7;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.container-1 input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+ 
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+ 
+.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+ 
+.container-1 input#search:-ms-input-placeholder {  
+   color: #65737e;  
+}
+
+.container-1 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+                                               /*  ---------- edit-patient page ----------*/
+
+
+.edit-patient-form{
+
+  margin-top:15px;
+}
+                                               /*  ---------- new-treatment page ----------*/
+
+
+.treatment-btn{
+  margin-top:26px;
+
+}
+
+                                               /*  ---------- admin-panel page ----------*/
+
+.admin-table{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.form-search{
+
+  display: inline-block;
+
+}
+.info-style{
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px;
+    border: 2px white solid;
+    height:76px;
+    }
+
+  .info-container2{
+
+    margin-bottom: 10px;
+  }
+
+  #to {
+    padding:8px;
+  }

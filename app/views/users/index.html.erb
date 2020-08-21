@@ -1,0 +1,39 @@
+<% provide(:title, 'All users') %>
+
+				<div class="container user-index">
+
+
+				<div class="row">
+					<% @users.each do |user| %>
+						<div class="col-xs-12 col-md-4 col-sm-6 col-xm-12" >	
+						
+							<ul class="users">
+								<li >
+							      	<%= gravatar_for user, size: 50 %>
+							      	<%= link_to user.name, user, class:'user-link hvr-bounce-to-left' %>
+								</li>
+							</ul>
+						
+						</div>
+					<% end %>	
+				</div>
+
+
+
+
+
+				<div class="row">
+
+					<div class="pag col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+						<%= will_paginate @users,:page_links => false %>
+					</div>	
+
+				</div>
+				
+			</div>
+				
+
+
+
+			
+

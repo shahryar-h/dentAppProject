@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teartment_date: 2016-04-03
+  tooth_number: 1
+  remark: MyText
+  fee: 1.5
+  paid: 1.5
+  balance: 1.5
+  associate: 1.5
+  clinic: 1.5
+  patient_id: 
+
+two:
+  teartment_date: 2016-04-03
+  tooth_number: 1
+  remark: MyText
+  fee: 1.5
+  paid: 1.5
+  balance: 1.5
+  associate: 1.5
+  clinic: 1.5
+  patient_id: 

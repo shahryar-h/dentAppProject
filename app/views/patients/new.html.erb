@@ -1,0 +1,70 @@
+<% provide(:title, 'New Patient') %>
+
+  <div class="row">
+      <h1 class="signup">Create New Patient</h1>
+  </div>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 col-lg-6 col-lg-offset-3">
+    <div class="center-reg-form">
+     
+    <%= bootstrap_form_for(@patient) do |f| %>
+      
+      <div class="col-lg-6">
+      <%= f.text_field :first_name, hide_label: true, placeholder: "First Name",icon: "user"%>
+    </div>
+      <div class="col-lg-6">
+      <%= f.text_field :last_name, hide_label: true, placeholder: "Last Name",icon: "user"%>
+</div>
+<div class="col-lg-6">
+      <%= f.text_field :middle_name, hide_label: true, placeholder: "Middle Name",icon: "user"%>
+</div>
+<div class="col-lg-6">
+      <%= f.text_field :title, hide_label: true, placeholder: "title",icon: "user"%>
+    </div>
+    <div class="col-lg-6">  
+      <%= f.text_field :guardian, hide_label: true, placeholder: "guardian",icon: "user"%>
+</div>
+<div class="col-lg-6">
+      <%= f.text_field :physician, hide_label: true, placeholder: "physician",icon: "user"%>
+</div>
+<div class="col-lg-6">
+      <%= f.number_field :patient_number, hide_label: true, placeholder: "Patient Number",icon:"phone"%>
+      </div>
+<div class="col-lg-6">
+      <%= f.text_field :con_number, hide_label: true, placeholder: "Contact Number",icon:"phone"%>
+      </div>
+<div class="col-lg-6">
+      <%= f.email_field :email, hide_label: true, placeholder: "Patient's Email", icon:"envelope"%>
+      </div>
+<div class="col-lg-6">
+      <%= f.date_field :consult_date, label: "Consultation Date",icon:"calendar"%>
+</div>
+<div class="col-lg-6">
+      <%= f.date_field :birtday,label: "Birtday",icon:"calendar"%>
+</div>
+<div class="col-lg-6">
+
+    <%= f.text_area :diagnosis, hide_label: true, placeholder: "Diagnosis Overview",icon:"pencil"%>
+</div>
+<div class="col-lg-12">
+      <%= f.text_area :address, hide_label: true, placeholder: "Address",icon:"home"%>
+</div>
+     
+<div class="col-lg-6">
+      <%= f.file_field :patient_avatar%>
+      </div>
+      <div class="col-lg-6">
+      <%= f.file_field :patient_od%>
+      </div>
+<div class="col-lg-6">
+      <%= f.collection_select :user_id, User.all, :id, :name %>
+ </div>     
+      
+
+      <%= f.submit "Create Patient", class: "btn btn-primary reg-form-button" %>
+    <% end %>
+     </div>
+  </div>
+</div>
+
+
